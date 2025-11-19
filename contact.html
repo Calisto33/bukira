@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Bukira Relief Organisation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ======== HEADER & NAVIGATION ======== -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Bukira Relief Organisation Logo">
+                <span>Bukira Relief</span>
+            </a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">&#9776;</button>
+
+            <!-- Navigation Wrapper -->
+            <div class="nav-right" id="navRight">
+                <!-- Mobile Menu Close Button -->
+                <button class="menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="work.html">Our Work</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="get-involved.html">Get Involved</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                </ul>
+                <a href="donate.html" class="btn btn-donate">Donate Now</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ======== PAGE HEADER ======== -->
+        <section class="hero-page">
+            <h1>Contact Us</h1>
+            <p>We would love to hear from you. Get in touch with our team.</p>
+        </section>
+
+        <!-- ======== MAIN CONTENT ======== -->
+        <section class="content-section">
+            <div class="container contact-container">
+                <div class="contact-info">
+                    <h2>Our Offices</h2>
+                    <p>
+                        <strong>Email:</strong><br>
+                        bukira07@gmail.com
+                    </p>
+                    <p>
+                        <strong>Zimbabwe Address:</strong><br>
+                        No. 1 Club Road, Eiffel Flats, Kadoma, Zimbabwe
+                    </p>
+                    <p>
+                        <strong>UK Address:</strong><br>
+                        57 Old Toll Gate, St Georges, Telford, UK, TF2 9FH
+                    </p>
+                    <p>
+                        <strong>Mobile:</strong><br>
+                        (Will be provided soon)
+                    </p>
+                </div>
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form action="send_email.php" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======== FOOTER ======== -->
+    <footer>
+        <div class="container footer-content">
+            <!-- Footer content is the same -->
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bukira Relief Organisation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Link to the new JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+/* ======== GLOBAL STYLES ======== */
+:root {
+    --color-main-bg: #FFFFFF;
+    --color-secondary: #2a7d2a;
+    --color-footer-bg: #1a1a1a;
+    --color-text: #333333;
+    --color-text-light: #f4f4f4;
+    --font-primary: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-main-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    
+    /* --- Page Fade-In Animation --- */
+    animation: fadeInPage 0.8s ease-out;
+}
+
+/* --- Keyframe for Page Fade --- */
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.4rem; }
+
+p { margin-bottom: 10px; }
+a { text-decoration: none; color: var(--color-secondary); }
+
+/* ======== HEADER & NAVIGATION ======== */
+header {
+    background: var(--color-main-bg);
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--color-text);
+    font-weight: 700;
+    font-size: 1.2rem;
+    z-index: 210;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px; 
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: var(--color-text);
+    font-weight: 700;
+    padding-bottom: 5px;
+    transition: color 0.3s, border-color 0.3s;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+.menu-toggle, .menu-close {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-text);
+    cursor: pointer;
+    z-index: 210;
+}
+
+/* ======== BUTTONS ======== */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-donate {
+    background-color: var(--color-secondary);
+    color: var(--color-main-bg);
+}
+
+.btn-donate:hover {
+    background-color: #2e8b2e;
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: var(--color-secondary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #2e8b2e;
+    transform: scale(1.05);
+}
+
+/* ======== HERO SECTION (Generic for internal pages) ======== */
+.hero-page {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.hero-page h1 {
+    color: var(--color-secondary);
+}
+
+/* ======== CONTENT STYLES ======== */
+.content-section {
+    padding: 60px 20px;
+}
+
+.content-section .container {
+    max-width: 900px;
+}
+
+.content-section h2 {
+    color: var(--color-secondary);
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+
+/* --- NEW: Image style for content pages --- */
+.content-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* --- Specific to About Page --- */
+.about-section {
+    margin-bottom: 40px;
+}
+
+/* --- Specific to Contact Page --- */
+.contact-container {
+    display: flex;
+    gap: 40px;
+}
+.contact-info, .contact-form {
+    flex: 1;
+}
+.contact-info p {
+    margin-bottom: 20px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-primary);
+}
+
+/* --- Specific to Gallery Page --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* --- Specific to Get Involved Page --- */
+.involve-columns {
+    display: flex;
+    gap: 40px;
+}
+.involve-col {
+    flex: 1;
+}
+.involve-col .btn {
+    margin-top: 10px;
+}
+
+
+/* ======== HERO SECTION (Homepage) ======== */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+.hero-content { max-width: 700px; }
+.hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+.hero p { font-size: 1.2rem; margin-bottom: 30px; }
+
+/* ======== WELCOME SECTION (Homepage) ======== */
+.welcome { padding: 60px 20px; text-align: center; }
+.welcome .subtitle { font-size: 1.1rem; max-width: 800px; margin: 0 auto 40px auto; }
+.welcome-cards { display: flex; justify-content: space-between; gap: 30px; text-align: left; }
+.welcome .card { 
+    background: #fdfdfd; 
+    border: 1px solid #eee; 
+    border-radius: 8px; 
+    padding: 30px; 
+    flex: 1; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.welcome .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.welcome .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.welcome .card a { font-weight: 700; }
+
+/* ======== FOCUS SECTION (Homepage) ======== */
+.focus { background-color: var(--color-secondary); color: var(--color-text-light); padding: 60px 20px; text-align: center; }
+.focus-content { max-width: 900px; }
+.focus-areas { display: flex; justify-content: space-around; gap: 30px; margin-top: 30px; margin-bottom: 30px; }
+.focus-area { flex: 1; padding: 20px; border-left: 3px solid #fff; }
+.focus .btn-primary { background-color: #fff; color: var(--color-secondary); }
+.focus .btn-primary:hover { background-color: #f4f4f4; transform: scale(1.05); }
+
+/* ======== FOOTER ======== */
+footer {
+    background-color: var(--color-footer-bg);
+    color: var(--color-text-light);
+    padding-top: 50px;
+    overflow: hidden; /* To contain reveal animations */
+}
+.footer-content { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+.footer-col { flex: 1; min-width: 250px; margin-bottom: 20px; }
+.footer-logo { height: 60px; margin-bottom: 15px; }
+.footer-col h3 { color: #fff; margin-bottom: 20px; }
+.footer-col p { font-size: 0.9rem; line-height: 1.7; color: #ccc; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a { color: #ccc; transition: color 0.3s; }
+.footer-col ul a:hover { color: var(--color-secondary); }
+.footer-bottom { text-align: center; padding: 20px; margin-top: 20px; border-top: 1px solid #444; font-size: 0.9rem; color: #aaa; }
+
+
+/*
+========================================
+   SCROLL ANIMATION STYLES
+========================================
+*/
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger card animations */
+.welcome .card.reveal:nth-child(2) {
+    transition-delay: 200ms;
+}
+.welcome .card.reveal:nth-child(3) {
+    transition-delay: 400ms;
+}
+.footer-col.reveal:nth-child(2) {
+    transition-delay: 200ms;
+}
+.footer-col.reveal:nth-child(3) {
+    transition-delay: 400ms;
+}
+.gallery-item.reveal {
+    transition-delay: calc(100ms * var(--i, 1));
+}
+
+
+/*
+========================================
+   RESPONSIVE STYLES
+========================================
+*/
+/* --- For Tablets and smaller --- */
+@media (max-width: 900px) {
+    .contact-container,
+    .involve-columns,
+    .welcome-cards,
+    .focus-areas {
+        flex-direction: column;
+        gap: 20px;
+    }
+    h1, .hero h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+}
+
+/* --- For Mobile Phones --- */
+@media (max-width: 700px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-right {
+        display: none; 
+    }
+    .nav-right.is-open {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--color-main-bg);
+        z-index: 200;
+        gap: 30px;
+    }
+    .nav-right.is-open .menu-close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2.5rem;
+    }
+    .nav-right.is-open .nav-menu {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .nav-right.is-open .nav-menu a {
+        font-size: 1.5rem;
+        border-bottom: none;
+    }
+    .nav-right.is-open .nav-menu a:hover,
+    .nav-right.is-open .nav-menu a.active {
+        border-bottom: none;
+        color: var(--color-secondary);
+    }
+    .nav-right.is-open .btn-donate {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
+    
+    .hero { height: auto; padding: 60px 20px; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1rem; }
+
+    .content-section,
+    .welcome,
+    .focus {
+        padding: 40px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-logo {
+        margin: 0 auto 15px auto;
+    }
+}
